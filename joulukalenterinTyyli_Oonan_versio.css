@@ -1,0 +1,178 @@
+body {
+    background-color: #f0f0f0; /* Taustaväri */
+    font-family: Arial, sans-serif; /* Fontti */
+    background-image: url('Taustakuva.png'); /* Taustakuva */
+    background-size: cover;
+    background-position: center;
+}
+#calendar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+}
+#musicButton {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #d83321c4; /* Vihreä taustaväri */
+    color: white; /* Valkoinen teksti */
+    border: none; /* Ei reunaviivaa */
+    border-radius: 5px; /* Pyöristetyt kulmat */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Varjo */
+    transition: background-color 0.3s; /* Taustavärin muutos */
+}
+#musicButton:hover {
+    background-color: #1b3b1dc7; /* Tummempi vihreä hover-tilassa */
+}
+#snowflakes {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Estää hiiren tapahtumat */
+    z-index: 1000; /* Lumihiutaleet näkyvät päällimmäisenä */
+}
+
+.snowflake {
+    position: absolute;
+    top: -10px;
+    background-color: white;
+    border-radius: 50%;
+    opacity: 0.8;
+    pointer-events: none;
+    animation: fall linear infinite;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(100vh);
+    }
+}
+
+
+.door {
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+    background-color: #ccc;
+    display: inline-block;
+    text-align: center;
+    line-height: 100px;
+    font-size: 24px;
+    cursor: pointer;
+    position: relative;
+    transition: transform 1s;
+    transform-origin: left;
+    border: 2px solid #f8f4f4; /* Lisää rajat */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Lisää varjo */
+}
+
+.door:nth-child(odd) {
+    background-color: #f6faf600; /* Parittomille luukuille */
+}
+
+.door:nth-child(even) {
+    background-color: #2c17c900; /* Parillisille luukuille */
+}
+
+.door img {
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+
+/* kuvatekstit */
+.caption {
+    font-size: 20px;
+    text-align: center;
+    color: #ffffff; /* Tumma väri */
+    margin-top: 5px;
+    font-style: italic; /* Kursivointi kuvatekstille */
+}
+
+.open {
+    transform: rotateY(-180deg);
+}
+
+.open img {
+    display: block;
+}
+
+.open .number {
+    display: none;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.modal-content {
+    margin: 15% auto;
+    padding: 20px;
+    width: 80%;
+    max-width: 600px;
+    position: relative;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    color: #fff;
+    font-size: 35px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* ID-valitsin */
+#header {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+
+/* Luokkavalitsin */
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Elementtivalitsin */
+h1 {
+    color: #333;
+    font-size: 2em;
+}
+
+/* Yhdistetty valitsin */
+.container p {
+    line-height: 1.6;
+    color: #666;
+}
+
+/* Pseudo-luokka */
+a:hover {
+    color: red;
+}
+
+/* Media query - responsiivinen suunnittelu */
+@media (max-width: 600px) {
+    .container {
+        width: 100%;
+        padding: 10px;
+    }
+}
